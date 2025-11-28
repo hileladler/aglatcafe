@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>קפה איתי</title>
+    <link rel="icon" type="image/png" href="file:///D:/hilel/downloads/ChatGPT%20Image%20Nov%2028,%202025,%2005_49_48%20PM.png">
+
+    <!-- Google Fonts: Rubik דק -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 300;
+            background: #faf8f4;
+            color: #333;
+            overflow-x: hidden;
+            letter-spacing: 0.03em;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to bottom, #4a6741, #688c5c);
+            color: white;
+            text-align: center;
+            padding: 8px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header .logo {
+            width: 160px;
+            display: block;
+            margin: 0 auto 3px;
+        }
+
+        header p {
+            font-size: 1.35rem;
+            margin: 0;
+            font-weight: 300;
+            opacity: 0.95;
+            letter-spacing: 0.05em;
+        }
+
+        .top-nav {
+            margin-top: 6px;
+        }
+
+        .top-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.15rem;
+            font-weight: 300;
+            padding: 4px 6px;
+            border-radius: 6px;
+            transition: 0.3s;
+            letter-spacing: 0.05em;
+        }
+
+        .top-nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        section {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 0;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .hero-img {
+            width: 240px;
+            border-radius: 14px;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .hero-img:hover {
+            transform: scale(1.03);
+        }
+
+        section.center h2 {
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+
+        section.center p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            max-width: 750px;
+            margin: 20px auto;
+            text-align: center;
+            color: #333;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+        }
+
+        .event-box {
+            background: #fff;
+            border-radius: 14px;
+            padding: 30px;
+            margin-top: 25px;
+            border-right: 6px solid #4a6741;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+            animation: fadeIn 1.2s ease;
+            transition: transform 0.3s;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+        }
+
+        .event-box:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #4a6741;
+            color: white;
+            border-radius: 10px;
+            font-size: 1.25rem;
+            text-decoration: none;
+            transition: 0.3s;
+            margin: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+
+        .btn:hover {
+            background: #3b5234;
+            transform: scale(1.08);
+        }
+
+        /* גלריה */
+        .static-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .static-gallery img {
+            width: 300px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: zoom-in;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .static-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer {
+            background: #eceae6;
+            text-align: center;
+            padding: 28px;
+            margin-top: 40px;
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: #555;
+            letter-spacing: 0.05em;
+        }
+
+        .whatsapp {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            width: 64px;
+            height: 64px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp img {
+            width: 34px;
+            height: 34px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="file:///D:/hilel/downloads/ChatGPT%20Image%20Nov%2028,%202025,%2005_49_48%20PM.png" alt="לוגו קפה איתי" class="logo" />
+        <p>עגלת הקפה להנצחת סרן איתי מאור ז״ל</p>
+
+        <nav class="top-nav">
+            <a href="#home">דף הבית</a>
+            <a href="#event">אירוע</a>
+            <a href="https://wa.me/972545533305" target="_blank" rel="noopener noreferrer">צור קשר</a>
+            <a href="#info">מידע</a>
+            <a href="#gallery">תמונות</a>
+        </nav>
+    </header>
+
+    <section id="home" class="center">
+        <img class="hero-img"
+            src="https://www.idf.il/media/s34crgct/%D7%90%D7%99%D7%AA%D7%99-%D7%9E%D7%90%D7%95%D7%A8-%D7%9E%D7%9C%D7%99%D7%97%D7%99.jpeg"
+            alt="סרן איתי מאור ז״ל">
+
+        <h2>סרן איתי מאור ז״ל</h2>
+        <p>
+            סרן איתי מאור ז״ל, מפקד מחלקה בפלוגה הרובאית של גדוד 51 בחטיבת גולני,
+            נפל ב־07.10 באזור זיקים תוך הגנה על יישובי העוטף. עגלת הקפה “קפה איתי” נוסעת לכל בסיסי הצבא
+            ומחלקת קפה ומאפה חינם לחיילים. אביו אילן גם מופיע באירועים בתשלום במכינות ובתי ספר, כדי לממן את פעילות העגלה.
+        </p>
+
+        <a href="tel:0545533305" class="btn">🕻 התקשרו לעגלה</a>
+    </section>
+
+    <section id="event">
+        <div class="event-box">
+            <h2>אירוע הפתיחה • קפה איתי</h2>
+            <p>
+                <strong>יום שישי – 29.11.24</strong><br />
+                <strong>שעות פתיחה:</strong> 09:00–12:00<br />
+                <strong>מיקום:</strong> אגם ראש העין<br />
+                <strong>היעדים:</strong> העגלה תבקר בבסיסים שונים ברחבי הארץ במהלך השבועות הקרובים.
+            </p>
+        </div>
+    </section>
+
+    <section id="gallery" class="center">
+        <h2>גלריית תמונות</h2>
+        <div class="static-gallery">
+            <!-- כל התמונות מובילות לגלריה -->
+            <a href="#gallery"><img src="https://a7.org/?file=20250128230919.jpeg" alt="תמונה 1"></a>
+            <a href="#gallery"><img src="https://a7.org/?file=20250128230907.jpeg" alt="תמונה 2"></a>
+            <a href="#gallery"><img src="https://a7.org/?file=20250128230929.jpeg" alt="תמונה 3"></a>
+            <a href="#gallery"><img src="https://2.a7.org/files/pictures/781x439/1176917.jpg" alt="תמונה 4"></a>
+        </div>
+
+        <div id="img4" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img src="https://a7.org/?file=20250128230919.jpeg" alt="תמונה 1"></div>
+        <div id="img5" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img src="https://a7.org/?file=20250128230907.jpeg" alt="תמונה 2"></div>
+        <div id="img6" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img src="https://a7.org/?file=20250128230929.jpeg" alt="תמונה 3"></div>
+        <div id="img7" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img src="https://2.a7.org/files/pictures/781x439/1176917.jpg" alt="תמונה 4"></div>
+    </section>
+
+    <footer>
+        קפה איתי – עגלת הקפה לזכר סרן איתי מאור ז״ל
+    </footer>
+
+    <a class="whatsapp" href="https://wa.me/972545533305" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
+    </a>
+</body>
+
+</html>
