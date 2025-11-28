@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>קפה איתי</title>
-    <link rel="icon" type="image/png" href="file:///D:/hilel/downloads/ChatGPT%20Image%20Nov%2028,%202025,%2005_49_48%20PM.png">
+    <link rel="icon" type="image/png"
+        href="file:///D:/hilel/downloads/ChatGPT%20Image%20Nov%2028,%202025,%2005_49_48%20PM.png">
 
     <!-- Google Fonts: Rubik דק -->
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -28,6 +29,7 @@
             text-align: center;
             padding: 8px 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
 
         header .logo {
@@ -44,6 +46,7 @@
             letter-spacing: 0.05em;
         }
 
+        /* Top navigation */
         .top-nav {
             margin-top: 6px;
         }
@@ -62,6 +65,54 @@
 
         .top-nav a:hover {
             background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Hamburger menu (hidden on desktop) */
+        .hamburger {
+            display: none;
+            position: absolute;
+            left: 20px;
+            top: 18px;
+            width: 30px;
+            height: 24px;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .hamburger div {
+            width: 100%;
+            height: 4px;
+            background: white;
+            border-radius: 2px;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .top-nav {
+                display: none;
+                flex-direction: column;
+                background: linear-gradient(to bottom, #4a6741, #688c5c);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .top-nav a {
+                margin: 10px 0;
+            }
+
+            .top-nav.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
         }
 
         section {
@@ -104,18 +155,20 @@
             letter-spacing: 0.04em;
         }
 
-        .event-box {
-            background: #fff;
-            border-radius: 14px;
-            padding: 30px;
-            margin-top: 25px;
-            border-right: 6px solid #4a6741;
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-            animation: fadeIn 1.2s ease;
-            transition: transform 0.3s;
-            font-weight: 300;
-            letter-spacing: 0.04em;
-        }
+.event-box {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px; /* הקטנתי מה-30px המקורי */
+    margin: 25px auto 0 auto; /* שמירה על מרכז */
+    border-right: 6px solid #4a6741;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 1.2s ease;
+    transition: transform 0.3s;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    max-width: 600px; /* הגבלת רוחב */
+}
+
 
         .event-box:hover {
             transform: translateY(-3px);
@@ -239,9 +292,15 @@
 
 <body>
     <header>
-        <img src="https://i.postimg.cc/vmswqsyv/Chat-GPT-Image-Nov-28-2025-05-33-18-PM-'wtq.png" alt="לוגו קפה איתי" class="logo" />
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <img src="https://i.postimg.cc/vmswqsyv/Chat-GPT-Image-Nov-28-2025-05-33-18-PM-'wtq.png"
+            alt="לוגו קפה איתי" class="logo" />
 
-        <nav class="top-nav">
+        <nav class="top-nav" id="topNav">
             <a href="#home">דף הבית</a>
             <a href="#event">אירוע</a>
             <a href="https://wa.me/972545533305" target="_blank" rel="noopener noreferrer">צור קשר</a>
@@ -279,17 +338,20 @@
     <section id="gallery" class="center">
         <h2>גלריית תמונות</h2>
         <div class="static-gallery">
-            <!-- כל התמונות מובילות לגלריה -->
             <a href="#gallery"><img src="https://a7.org/?file=20250128230919.jpeg" alt="תמונה 1"></a>
             <a href="#gallery"><img src="https://a7.org/?file=20250128230907.jpeg" alt="תמונה 2"></a>
             <a href="#gallery"><img src="https://a7.org/?file=20250128230929.jpeg" alt="תמונה 3"></a>
             <a href="#gallery"><img src="https://2.a7.org/files/pictures/781x439/1176917.jpg" alt="תמונה 4"></a>
         </div>
 
-        <div id="img4" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img src="https://a7.org/?file=20250128230919.jpeg" alt="תמונה 1"></div>
-        <div id="img5" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img src="https://a7.org/?file=20250128230907.jpeg" alt="תמונה 2"></div>
-        <div id="img6" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img src="https://a7.org/?file=20250128230929.jpeg" alt="תמונה 3"></div>
-        <div id="img7" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img src="https://2.a7.org/files/pictures/781x439/1176917.jpg" alt="תמונה 4"></div>
+        <div id="img4" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img
+                src="https://a7.org/?file=20250128230919.jpeg" alt="תמונה 1"></div>
+        <div id="img5" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img
+                src="https://a7.org/?file=20250128230907.jpeg" alt="תמונה 2"></div>
+        <div id="img6" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img
+                src="https://a7.org/?file=20250128230929.jpeg" alt="תמונה 3"></div>
+        <div id="img7" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img
+                src="https://2.a7.org/files/pictures/781x439/1176917.jpg" alt="תמונה 4"></div>
     </section>
 
     <footer>
@@ -299,11 +361,18 @@
     <a class="whatsapp" href="https://wa.me/972545533305" target="_blank" rel="noopener noreferrer">
         <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
     </a>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const topNav = document.getElementById('topNav');
+
+        hamburger.addEventListener('click', () => {
+            topNav.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
-
-
 
 
 
