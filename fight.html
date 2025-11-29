@@ -12,6 +12,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet" />
 
     <style>
+        /* ====== תפריט – סליידר ====== */
+
+.menu-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 380px;
+    margin: auto;
+}
+
+.slide {
+    display: none;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.dot {
+    height: 11px;
+    width: 11px;
+    margin: 0 4px;
+    display: inline-block;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.active-dot {
+    background-color: #4a6741;
+}
+
         body {
             margin: 0;
             font-family: 'Rubik', sans-serif;
@@ -47,6 +105,64 @@
             width: 100%;
             height: 100%;
         }
+        /* ====== תפריט – סליידר ====== */
+
+.menu-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 700px;
+    margin: auto;
+}
+
+.slide {
+    display: none;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.dot {
+    height: 11px;
+    width: 11px;
+    margin: 0 4px;
+    display: inline-block;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.active-dot {
+    background-color: #4a6741;
+}
+
 
         /* Facebook Icon */
         .facebook-icon {
@@ -324,12 +440,23 @@
                 right: 60px;
                 top: 18px;
             }
+
         }
+
+
     </style>
 </head>
 
 <body>
+    <!-- פס עליון -->
+<!-- פס עליון -->
+
+
+
     <header>
+        <!-- פס עליון -->
+
+
 
         <!-- Instagram -->
         <a href="https://www.instagram.com/p/DC1XKFRo3Ed/" target="_blank" class="instagram-icon">
@@ -372,20 +499,131 @@
             עגלת הקפה “קפה איתי” נוסעת לכל בסיסי הצבא ומחלקת קפה ומאפה חינם לחיילים.
         </p>
 
-        <a href="tel:0545533305" class="btn">🕻 התקשרו לעגלה</a>
+        <a href="tel:0545533305" class="btn">📞 התקשרו לעגלה</a>
     </section>
 
-    <section id="event">
-        <div class="event-box">
-            <h2>אירוע הפתיחה • קפה איתי</h2>
-            <p>
-                <strong>יום שישי – 29.11.24</strong><br>
-                <strong>שעות פתיחה:</strong> 09:00–12:00<br>
-                <strong>מיקום:</strong> אגם ראש העין<br>
-                <strong>היעדים:</strong> העגלה תבקר בבסיסים שונים ברחבי הארץ.
-            </p>
+
+
+<section id="menu" class="center">
+    <h2 class="menu-title">תפריט</h2>
+
+    <div class="slider-container">
+
+        <div class="slide">
+            <img src="https://thewoods.net.in/wp-content/uploads/2021/02/hotcofee.jpg">
+            <div class="slide-text">משקאות חמים</div>
         </div>
+
+        <div class="slide">
+            <img src="https://zaks.co.il/wp-content/uploads/2020/12/IMG_3879-1.jpg">
+            <div class="slide-text"> מאפים</div>
+        </div>
+
+        <div class="slide">
+            <img src="https://storage.hidabroot.org/articles_new/395852_tumb_730X500.webp">
+            <div class="slide-text"> ברד</div>
+        </div>
+
+        <div class="slide">
+            <img src="https://www.hccb.in/images/coke1.png">
+            <div class="slide-text"> שתייה קלה</div>
+        </div>
+
+    </div>
+
+    <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
     </section>
+<section id="articles" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 40px auto; max-width: 1000px;">
+
+  <!-- כרטיס 1 — כתבה של Inn / ערוץ 7 -->
+  <a href="https://www.inn.co.il/news/659989" target="_blank" rel="noopener noreferrer"
+     style="text-decoration: none; color: inherit; flex: 1 1 320px; max-width: 320px;">
+    <div style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); width: 320px; height: 200px;">
+      <img src="https://pic1.yitweb.co.il/cdn-cgi/image/f=auto,w=740,q=75/picserver/mynet/crop_images/2023/10/09/B1CBhu11Wa/B1CBhu11Wa_0_0_768_1024_0_large.jpg"
+           alt="כתבה ערוץ 7"
+           style="width: 100%; height: 100%; object-fit: cover;">
+      <div style="
+           position: absolute;
+           bottom: 0;
+           width: 100%;
+           background: rgba(0,0,0,0.5);
+           color: white;
+           padding: 12px;
+           font-size: 1.1rem;
+           text-align: center;
+           box-sizing: border-box;
+      ">
+        כתבה של Inn / ערוץ 7
+      </div>
+    </div>
+  </a>
+
+  <!-- כרטיס 2 — כתבה מ‑Ynet -->
+  <a href="https://www.ynet.co.il/food/article/yokra14346056" target="_blank" rel="noopener noreferrer"
+     style="text-decoration: none; color: inherit; flex: 1 1 320px; max-width: 320px;">
+    <div style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); width: 320px; height: 200px;">
+      <img src="https://giveback.co.il/image/16a61473-5815-bbc6-925b-e1926f5131fb.jpg"
+           alt="כתבה Ynet"
+           style="width: 100%; height: 100%; object-fit: cover;">
+      <div style="
+           position: absolute;
+           bottom: 0;
+           width: 100%;
+           background: rgba(0,0,0,0.5);
+           color: white;
+           padding: 12px;
+           font-size: 1.1rem;
+           text-align: center;
+           box-sizing: border-box;
+      ">
+        כתבה מ‑Ynet
+      </div>
+    </div>
+  </a>
+
+  <!-- כרטיס 3 — כתבה מערוץ 14 -->
+  <a href="https://www.youtube.com/watch?v=z0okmseI8no" target="_blank" rel="noopener noreferrer"
+     style="text-decoration: none; color: inherit; flex: 1 1 320px; max-width: 320px;">
+    <div style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); width: 320px; height: 200px;">
+      <img src="https://media.news1.co.il/thumbs/480/NEWSY20dc817dcad8854fe498e8ff43316a3b0c.jpg"
+           alt="כתבה ערוץ 14"
+           style="width: 100%; height: 100%; object-fit: cover;">
+      <div style="
+           position: absolute;
+           bottom: 0;
+           width: 100%;
+           background: rgba(0,0,0,0.5);
+           color: white;
+           padding: 12px;
+           font-size: 1.1rem;
+           text-align: center;
+           box-sizing: border-box;
+      ">
+        כתבה מערוץ 14
+      </div>
+    </div>
+  </a>
+
+</section>
+
+
+<!-- אם תרצה להוסיף גם וידאו – אפשר להוסיף בנפרד -->
+<!-- לדוגמה, מתחת לכתבות: -->
+
+</section>
+
+
+
+
+</body>
+</html>
+
+
 
     <section id="gallery" class="center">
         <h2>גלריית תמונות</h2>
@@ -394,6 +632,10 @@
             <a href="#gallery"><img src="https://a7.org/?file=20250128230907.jpeg" alt="תמונה 2"></a>
             <a href="#gallery"><img src="https://a7.org/?file=20250128230929.jpeg" alt="תמונה 3"></a>
             <a href="#gallery"><img src="https://2.a7.org/files/pictures/781x439/1176917.jpg" alt="תמונה 4"></a>
+            <a href="#gallery"><img src="https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/489425599_1077365591087280_7304407560355190760_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=yeU-nhcPCPIQ7kNvwENsQ2G&_nc_oc=Adk6e01fnge1Yfh4jqGxEIxbjdetKT8GcV9kzzMzBesC1ny0ZThfg7iS0ba6thOrlI7oxtq9FZAQ5c4XBW_LwTI0&_nc_zt=23&_nc_ht=scontent.ftlv19-2.fna&_nc_gid=qf5BQc55SJ6CWYD39T-ONw&oh=00_AfhNVKnI7VQpDc07rL_IqobmjJfLOW52NRS-FDPfnr5EGw&oe=6930E6C5" alt="תמונה 5"></a>
+            <a href="#gallery"><img src="https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/489960674_1077366484420524_7585673746019302683_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Me6qzJXF59kQ7kNvwEm3Ff8&_nc_oc=Adn-wqyICALcKBwvELolWCw1sxPZ6DMWmKSJbg7pQ3TWQRsWyAg7TD2E4eAvSqy0wlYwMKLybwqoAh-6lqn2i45v&_nc_zt=23&_nc_ht=scontent.ftlv19-2.fna&_nc_gid=aXlHDIKgW26Z4IY3vdU9JQ&oh=00_Afga6JT9qUSjvPEIpapP8zipHfq9ySBuwbZ2IIFYaVpGaQ&oe=6930ECA1" alt="תמונה 6"></a>
+            <a href="#gallery"><img src="https://scontent.ftlv19-3.fna.fbcdn.net/v/t39.30808-6/489015675_1077364971087342_6440930484172526962_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=2gfcuNBjIl0Q7kNvwHfLdN3&_nc_oc=AdmD-5PrGfjdnq7pFn3SQ3dseLwc7psD_mhQSZuK2D-k1uO4WuLeCQKY9YR3ryJX4xiLAMjqcTx9cTHopeMc_TLo&_nc_zt=23&_nc_ht=scontent.ftlv19-3.fna&_nc_gid=S1SnepRTmCo6hcCslMvAQA&oh=00_AfiJN3NhyTP3TRm5lGci6w4wkmDWgPZoK6_t8xncm5GXaQ&oe=693100E9" alt="תמונה 7"></a>
+            <a href="#gallery"><img src="https://scontent.ftlv19-3.fna.fbcdn.net/v/t39.30808-6/489095479_1077366411087198_379816838271907481_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=vI1TXYxyzAwQ7kNvwFDPCEx&_nc_oc=AdmTilQcYMfGO3GF9ByxJ09nNi3W18TKK_iJ-f3DeOG_VhOD995_JpGDme6Wmcg9QSUlOVXeKnXQn0sU8eKCYRIa&_nc_zt=23&_nc_ht=scontent.ftlv19-3.fna&_nc_gid=AOlOvqGfPVfk-YpO9kZIiA&oh=00_Afi9pLSvrNutOw_HY8MkOcjV58GhuuOA0XlKzaIwjN5srQ&oe=6930EEA4" alt="תמונה 8"></a>
         </div>
     </section>
 
@@ -413,10 +655,57 @@
             topNav.classList.toggle('active');
         });
     </script>
+    <!-- ... כל התוכן האחר ... -->
+
+
+
 
 </body>
+<script>
+    let slideIndex = 0;
+
+    function showSlides() {
+        const slides = document.getElementsByClassName("slide");
+        const dots = document.getElementsByClassName("dot");
+
+        // מסתירים את כל השקפים
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        // עוברים לשקף הבא בסדר קבוע
+        slideIndex++;
+        if (slideIndex > slides.length) slideIndex = 1;
+
+        // מסמנים את הנקודה הפעילה
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active-dot");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add("active-dot");
+
+        // מחכים 4 שניות ואז עוברים לשקף הבא
+        setTimeout(showSlides, 4000);
+    }
+
+    // מאפשר למשתמש ללחוץ על נקודה ולעבור ישירות לשקף
+    function currentSlide(n) {
+        slideIndex = n - 1; // נתקן את האינדקס
+        showSlides();
+    }
+
+    // מתחילים את הסליידר
+    showSlides();
+</script>
+
 
 </html>
+
+
+
+
+
 
 
 
