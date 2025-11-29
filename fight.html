@@ -32,18 +32,42 @@
             position: relative;
         }
 
+        /* Instagram Icon */
+        .instagram-icon {
+            position: absolute;
+            right: 20px;
+            top: 18px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            z-index: 2000;
+        }
+
+        .instagram-icon img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Facebook Icon */
+        .facebook-icon {
+            position: absolute;
+            right: 70px;
+            top: 18px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            z-index: 2000;
+        }
+
+        .facebook-icon img {
+            width: 100%;
+            height: 100%;
+        }
+
         header .logo {
             width: 160px;
             display: block;
             margin: 0 auto 3px;
-        }
-
-        header p {
-            font-size: 1.35rem;
-            margin: 0;
-            font-weight: 300;
-            opacity: 0.95;
-            letter-spacing: 0.05em;
         }
 
         /* Top navigation */
@@ -67,7 +91,7 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
-        /* Hamburger menu (hidden on desktop) */
+        /* Hamburger menu */
         .hamburger {
             display: none;
             position: absolute;
@@ -88,8 +112,9 @@
             border-radius: 2px;
         }
 
-        /* Mobile styles */
+        /* Mobile */
         @media (max-width: 768px) {
+
             .top-nav {
                 display: none;
                 flex-direction: column;
@@ -100,6 +125,7 @@
                 width: 100%;
                 text-align: center;
                 padding: 10px 0;
+                z-index: 1500;
             }
 
             .top-nav a {
@@ -112,6 +138,10 @@
 
             .hamburger {
                 display: flex;
+            }
+
+            .instagram-icon {
+                right: 60px;
             }
         }
 
@@ -155,20 +185,20 @@
             letter-spacing: 0.04em;
         }
 
-.event-box {
-    background: #fff;
-    border-radius: 14px;
-    padding: 20px; /* הקטנתי מה-30px המקורי */
-    margin: 25px auto 0 auto; /* שמירה על מרכז */
-    border-right: 6px solid #4a6741;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-    animation: fadeIn 1.2s ease;
-    transition: transform 0.3s;
-    font-weight: 300;
-    letter-spacing: 0.04em;
-    max-width: 600px; /* הגבלת רוחב */
-}
-
+        /* EVENT BOX */
+        .event-box {
+            background: #fff;
+            border-radius: 14px;
+            padding: 20px;
+            margin: 25px auto 0 auto;
+            border-right: 6px solid #4a6741;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+            animation: fadeIn 1.2s ease;
+            transition: transform 0.3s;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            max-width: 600px;
+        }
 
         .event-box:hover {
             transform: translateY(-3px);
@@ -292,11 +322,26 @@
 
 <body>
     <header>
+
+        <!-- אייקון אינסטגרם -->
+        <a href="https://www.instagram.com/p/DC1XKFRo3Ed/" target="_blank" class="instagram-icon">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png"
+                alt="Instagram" />
+        </a>
+
+        <!-- אייקון פייסבוק -->
+        <a href="https://www.facebook.com/HahevraHaironitRH/posts/%D7%9E%D7%AA%D7%A8%D7%92%D7%A9%D7%99%D7%9D-%D7%95%D7%9E%D7%AA%D7%92%D7%90%D7%99%D7%9D-%D7%9C%D7%94%D7%96%D7%9E%D7%99%D7%9F-%D7%90%D7%AA%D7%9B%D7%9D-%D7%9C%D7%A7%D7%A4%D7%94-%D7%90%D7%99%D7%AA%D7%99-%D7%A2%D7%92%D7%9C%D7%AA-%D7%A7%D7%A4%D7%94-%D7%A9%D7%94%D7%95%D7%A7%D7%9E%D7%94-%D7%9C%D7%94%D7%A0%D7%A6%D7%97%D7%AA%D7%95-%D7%A9%D7%9C-%D7%A1%D7%A8%D7%9F-%D7%90%D7%99%D7%AA%D7%99-%D7%9E%D7%90%D7%95%D7%A8-%D7%96/990463756446850/"
+            target="_blank" class="facebook-icon">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/facebook-app-round-white-icon.png"
+                alt="Facebook" />
+        </a>
+
         <div class="hamburger" id="hamburger">
             <div></div>
             <div></div>
             <div></div>
         </div>
+
         <img src="https://i.postimg.cc/vmswqsyv/Chat-GPT-Image-Nov-28-2025-05-33-18-PM-'wtq.png"
             alt="לוגו קפה איתי" class="logo" />
 
@@ -315,9 +360,8 @@
 
         <h2>סרן איתי מאור ז״ל</h2>
         <p>
-            סרן איתי מאור ז״ל, מפקד מחלקה בפלוגה הרובאית של גדוד 51 בחטיבת גולני,
-            נפל ב־07.10 באזור זיקים תוך הגנה על יישובי העוטף. עגלת הקפה “קפה איתי” נוסעת לכל בסיסי הצבא
-            ומחלקת קפה ומאפה חינם לחיילים. אביו אילן גם מופיע באירועים בתשלום במכינות ובתי ספר, כדי לממן את פעילות העגלה.
+            סרן איתי מאור ז״ל, מפקד מחלקה בפלוגה הרובאית של גדוד 51 בחטיבת גולני, נפל ב־07.10 באזור זיקים תוך הגנה על יישובי העוטף.
+            עגלת הקפה “קפה איתי” נוסעת לכל בסיסי הצבא ומחלקת קפה ומאפה חינם לחיילים.
         </p>
 
         <a href="tel:0545533305" class="btn">🕻 התקשרו לעגלה</a>
@@ -327,10 +371,10 @@
         <div class="event-box">
             <h2>אירוע הפתיחה • קפה איתי</h2>
             <p>
-                <strong>יום שישי – 29.11.24</strong><br />
-                <strong>שעות פתיחה:</strong> 09:00–12:00<br />
-                <strong>מיקום:</strong> אגם ראש העין<br />
-                <strong>היעדים:</strong> העגלה תבקר בבסיסים שונים ברחבי הארץ במהלך השבועות הקרובים.
+                <strong>יום שישי – 29.11.24</strong><br>
+                <strong>שעות פתיחה:</strong> 09:00–12:00<br>
+                <strong>מיקום:</strong> אגם ראש העין<br>
+                <strong>היעדים:</strong> העגלה תבקר בבסיסים שונים ברחבי הארץ.
             </p>
         </div>
     </section>
@@ -343,22 +387,13 @@
             <a href="#gallery"><img src="https://a7.org/?file=20250128230929.jpeg" alt="תמונה 3"></a>
             <a href="#gallery"><img src="https://2.a7.org/files/pictures/781x439/1176917.jpg" alt="תמונה 4"></a>
         </div>
-
-        <div id="img4" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img
-                src="https://a7.org/?file=20250128230919.jpeg" alt="תמונה 1"></div>
-        <div id="img5" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img
-                src="https://a7.org/?file=20250128230907.jpeg" alt="תמונה 2"></div>
-        <div id="img6" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img
-                src="https://a7.org/?file=20250128230929.jpeg" alt="תמונה 3"></div>
-        <div id="img7" class="lightbox"><a class="close-btn" href="#gallery">✖</a><img
-                src="https://2.a7.org/files/pictures/781x439/1176917.jpg" alt="תמונה 4"></div>
     </section>
 
     <footer>
         קפה איתי – עגלת הקפה לזכר סרן איתי מאור ז״ל
     </footer>
 
-    <a class="whatsapp" href="https://wa.me/972545533305" target="_blank" rel="noopener noreferrer">
+    <a class="whatsapp" href="https://wa.me/972545533305" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
     </a>
 
@@ -370,6 +405,7 @@
             topNav.classList.toggle('active');
         });
     </script>
+
 </body>
 
 </html>
