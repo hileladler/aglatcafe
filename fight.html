@@ -240,18 +240,30 @@
             text-align: center;
         }
 
-        .hero-img {
-            width: 240px;
-            border-radius: 14px;
-            display: block;
-            margin: 20px auto;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
+.images-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
 
-        .hero-img:hover {
-            transform: scale(1.03);
-        }
+/* הגדרות זהות לשתי התמונות */
+.hero-img,
+.hero-img2 {
+    width: 240px;      /* אותו רוחב */
+    height: 240px;     /* אותו גובה */
+    object-fit: cover; /* חיתוך יפה שלא מעוות את התמונה */
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.hero-img:hover,
+.hero-img2:hover {
+    transform: scale(1.03);
+}
+
+
 
         section.center h2 {
             font-weight: 400;
@@ -466,7 +478,7 @@
         </a>
 
         <!-- Facebook -->
-        <a href="https://www.facebook.com/HahevraHaironitRH/posts/%D7%9E%D7%AA%D7%A8%D7%92%D7%A9%D7%99%D7%9D-%D7%95%D7%9E%D7%AA%D7%92%D7%90%D7%99%D7%9D-%D7%9C%D7%94%D7%96%D7%9E%D7%99%D7%9F-%D7%90%D7%AA%D7%9B%D7%9D-%D7%9C%D7%A7%D7%A4%D7%94-%D7%90%D7%99%D7%AA%D7%99-%D7%A2%D7%92%D7%9C%D7%AA-%D7%A7%D7%A4%D7%94-%D7%A9%D7%94%D7%95%D7%A7%D7%9E%D7%94-%D7%9C%D7%94%D7%A0%D7%A6%D7%97%D7%AA%D7%95-%D7%A9%D7%9C-%D7%A1%D7%A8%D7%9F-%D7%90%D7%99%D7%AA%D7%99-%D7%9E%D7%90%D7%95%D7%A8-%D7%96/990463756446850/"
+        <a href="https://www.facebook.com/ilan.maor/"
             target="_blank" class="facebook-icon">
             <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/facebook-app-round-white-icon.png"
                 alt="Facebook" />
@@ -491,6 +503,10 @@
         <img class="hero-img"
             src="https://www.idf.il/media/s34crgct/%D7%90%D7%99%D7%AA%D7%99-%D7%9E%D7%90%D7%95%D7%A8-%D7%9E%D7%9C%D7%99%D7%97%D7%99.jpeg"
             alt="סרן איתי מאור ז״ל">
+            <img class="hero-img2"
+            src="https://ynet-pic1.yit.co.il/cdn-cgi/image/f=auto,w=740,q=75/picserver6/crop_images/2025/04/29/yk14349048/yk14349048_16_0_1012_759_0_x-large.jpg"
+            alt="עגלת קפה- תמונה ">
+
 
         <h2>סרן איתי מאור ז״ל</h2>
         <p>
@@ -704,6 +720,16 @@
 
 
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 
