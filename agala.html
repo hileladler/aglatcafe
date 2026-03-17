@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>קפה איתי</title>
+    <link rel="icon" type="image/png"
+        href="file:///D:/hilel/downloads/ChatGPT%20Image%20Nov%2028,%202025,%2005_49_48%20PM.png">
+
+    <!-- Google Fonts: Rubik דק -->   
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png"
+      href="file:///D:/hilel/downloads/ChatGPT%20Image%20Nov%2028,%202025,%2005_49_48%20PM.png">
+
+
+    <style>
+        /* ====== תפריט – סליידר ====== */
+
+.menu-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 380px;
+    margin: auto;
+}
+
+.slide {
+    display: none;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.dot {
+    height: 11px;
+    width: 11px;
+    margin: 0 4px;
+    display: inline-block;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.active-dot {
+    background-color: #4a6741;
+}
+
+        body {
+            margin: 0;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 300;
+            background: #faf8f4;
+            color: #333;
+            overflow-x: hidden;
+            letter-spacing: 0.03em;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to bottom, #31462a, #688c5c);
+            color: white;
+            text-align: center;
+            padding: 8px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        /* Instagram Icon */
+        .instagram-icon {
+            position: absolute;
+            right: 20px;
+            top: 18px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            z-index: 2000;
+        }
+
+        .instagram-icon img {
+            width: 100%;
+            height: 100%;
+        }
+        /* ====== תפריט – סליידר ====== */
+
+.menu-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 700px;
+    margin: auto;
+}
+
+.slide {
+    display: none;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.dot {
+    height: 11px;
+    width: 11px;
+    margin: 0 4px;
+    display: inline-block;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.active-dot {
+    background-color: #4a6741;
+}
+
+
+        /* Facebook Icon */
+        .facebook-icon {
+            position: absolute;
+            right: 70px;
+            top: 18px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            z-index: 2000;
+        }
+
+        .facebook-icon img {
+            width: 100%;
+            height: 100%;
+        }
+
+        header .logo {
+            width: 160px;
+            display: block;
+            margin: 0 auto 3px;
+        }
+
+        /* Top navigation */
+        .top-nav {
+            margin-top: 6px;
+        }
+
+        .top-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.15rem;
+            font-weight: 300;
+            padding: 4px 6px;
+            border-radius: 6px;
+            transition: 0.3s;
+            letter-spacing: 0.05em;
+        }
+
+        .top-nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            position: absolute;
+            left: 20px;
+            top: 18px;
+            width: 30px;
+            height: 24px;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .hamburger div {
+            width: 100%;
+            height: 4px;
+            background: white;
+            border-radius: 2px;
+        }
+
+        /* Sections */
+        section {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 0;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* הגדרות זהות לשתי התמונות */
+.hero-img,
+.hero-img2 {
+    width: 240px;      /* אותו רוחב */
+    height: 240px;     /* אותו גובה */
+    object-fit: cover; /* חיתוך יפה שלא מעוות את התמונה */
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.hero-img:hover,
+.hero-img2:hover {
+    transform: scale(1.03);
+}
+
+
+
+        section.center h2 {
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+
+        section.center p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            max-width: 750px;
+            margin: 20px auto;
+            text-align: center;
+            color: #333;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+        }
+
+        /* Event Box */
+        .event-box {
+            background: #fff;
+            border-radius: 14px;
+            padding: 20px;
+            margin: 25px auto 0 auto;
+            border-right: 6px solid #4a6741;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+            animation: fadeIn 1.2s ease;
+            transition: transform 0.3s;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            max-width: 600px;
+        }
+
+        .event-box:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #4a6741;
+            color: white;
+            border-radius: 10px;
+            font-size: 1.25rem;
+            text-decoration: none;
+            transition: 0.3s;
+            margin: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+
+        .btn:hover {
+            background: #3b5234;
+            transform: scale(1.08);
+        }
+
+        /* Gallery */
+        .static-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .static-gallery img {
+            width: 300px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: zoom-in;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .static-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer {
+            background: #eceae6;
+            text-align: center;
+            padding: 28px;
+            margin-top: 40px;
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: #555;
+            letter-spacing: 0.05em;
+        }
+
+        .whatsapp {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            width: 64px;
+            height: 64px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp img {
+            width: 34px;
+            height: 34px;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .top-nav {
+                display: none;
+                flex-direction: column;
+                background: linear-gradient(to bottom, #4a6741, #688c5c);
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                padding: 10px 0;
+                z-index: 1000;
+            }
+
+            .top-nav a {
+                margin: 10px 0;
+                text-align: center;
+                display: block;
+            }
+
+            .top-nav.active {
+                display: flex;
+            }
+
+            /* Social icons adjustments */
+            .instagram-icon {
+                right: 10px;
+                top: 18px;
+            }
+
+            .facebook-icon {
+                right: 60px;
+                top: 18px;
+            }
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- פס עליון -->
+<!-- פס עליון -->
+
+
+
+    <header>
+
+        <!-- פס עליון -->
+
+
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/remember_itay_maor/" target="_blank" class="instagram-icon">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png"
+                alt="Instagram" />
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/ilan.maor/"
+            target="_blank" class="facebook-icon">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/facebook-app-round-white-icon.png"
+                alt="Facebook" />
+        </a>
+
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <img src="https://i.postimg.cc/vmswqsyv/Chat-GPT-Image-Nov-28-2025-05-33-18-PM-'wtq.png"
+            alt="לוגו קפה איתי" class="logo" />
+
+        <nav class="top-nav" id="topNav">
+            <a href="#home">דף הבית</a>
+            <a href="https://wa.me/972545533305" target="_blank" rel="noopener noreferrer">צור קשר</a>
+            <a href="#gallery">תמונות</a>
+        </nav>
+    </header>
+                <section id="home" class="center">
+        <img class="hero-img"
+            src="https://www.idf.il/media/s34crgct/%D7%90%D7%99%D7%AA%D7%99-%D7%9E%D7%90%D7%95%D7%A8-%D7%9E%D7%9C%D7%99%D7%97%D7%99.jpeg"
+            alt="סרן איתי מאור ז״ל">
+            <img class="hero-img2"
+            src="https://ynet-pic1.yit.co.il/cdn-cgi/image/f=auto,w=740,q=75/picserver6/crop_images/2025/04/29/yk14349048/yk14349048_16_0_1012_759_0_x-large.jpg"
+            alt="עגלת קפה- תמונה ">
+
+
+        <h2>סרן איתי מאור ז״ל</h2>
+        <p>
+            סרן איתי מאור ז״ל, מפקד מחלקה בפלוגה הרובאית של גדוד 51 בחטיבת גולני, נפל ב־07.10 באזור זיקים תוך הגנה על יישובי העוטף.
+            עגלת הקפה “קפה איתי” היא מיזם לזכרו, העגלה נוסעת לכל בסיסי הצבא ומחלקת קפה ומאפה חינם לחיילים.
+        </p>
+
+        <a href="tel:0545533305" class="btn">📞 התקשרו לעגלה</a>
+    </section>
+
+
+
+
+
+
+<section id="menu" class="center">
+    <h2 class="menu-title">תפריט</h2>
+
+    <div class="slider-container">
+
+        <div class="slide">
+            <img src="https://i.postimg.cc/zfb48jh5/Whats-App-Image-2025-12-10-at-14-36-58-(1)-(1).jpg">
+            <div class="slide-text">משקאות חמים</div>
+        </div>
+
+        <div class="slide">
+            <img src="https://i.postimg.cc/YqP3Mwzy/Whats-App-Image-2025-12-10-at-14-36-58.jpg">
+            <div class="slide-text"> מאפים</div>
+        </div>
+
+        <div class="slide">
+            <img src="https://storage.hidabroot.org/articles_new/395852_tumb_730X500.webp">
+            <div class="slide-text"> ברד</div>
+        </div>
+
+        <div class="slide">
+            <img src="https://i.postimg.cc/vBXrjRm7/e88914f9-a1cb-443a-9f12-e507cac036f2.jpg">
+            <div class="slide-text"> שתייה קלה</div>
+        </div>
+    
+
+    </div>
+    <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+    </section>
+
+<section id="articles" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 40px auto; max-width: 1000px;">
+
+  <!-- כרטיס 1 — כתבה של Inn / ערוץ 7 -->
+  <a href="https://www.inn.co.il/news/659989" target="_blank" rel="noopener noreferrer"
+     style="text-decoration: none; color: inherit; flex: 1 1 320px; max-width: 320px;">
+    <div style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); width: 320px; height: 200px;">
+      <img src="https://pic1.yitweb.co.il/cdn-cgi/image/f=auto,w=740,q=75/picserver/mynet/crop_images/2023/10/09/B1CBhu11Wa/B1CBhu11Wa_0_0_768_1024_0_large.jpg"
+           alt="כתבה ערוץ 7"
+           style="width: 100%; height: 100%; object-fit: cover;">
+      <div style="
+           position: absolute;
+           bottom: 0;
+           width: 100%;
+           background: rgba(0,0,0,0.5);
+           color: white;
+           padding: 12px;
+           font-size: 1.1rem;
+           text-align: center;
+           box-sizing: border-box;
+      ">
+        כתבה של Inn / ערוץ 7
+      </div>
+    </div>
+  </a>
+
+  <!-- כרטיס 2 — כתבה מ‑Ynet -->
+  <a href="https://www.ynet.co.il/food/article/yokra14346056" target="_blank" rel="noopener noreferrer"
+     style="text-decoration: none; color: inherit; flex: 1 1 320px; max-width: 320px;">
+    <div style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); width: 320px; height: 200px;">
+      <img src="https://giveback.co.il/image/16a61473-5815-bbc6-925b-e1926f5131fb.jpg"
+           alt="כתבה Ynet"
+           style="width: 100%; height: 100%; object-fit: cover;">
+      <div style="
+           position: absolute;
+           bottom: 0;
+           width: 100%;
+           background: rgba(0,0,0,0.5);
+           color: white;
+           padding: 12px;
+           font-size: 1.1rem;
+           text-align: center;
+           box-sizing: border-box;
+      ">
+        כתבה מ‑Ynet
+      </div>
+    </div>
+  </a>
+
+  <!-- כרטיס 3 — כתבה מערוץ 14 -->
+  <a href="https://www.youtube.com/watch?v=z0okmseI8no" target="_blank" rel="noopener noreferrer"
+     style="text-decoration: none; color: inherit; flex: 1 1 320px; max-width: 320px;">
+    <div style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); width: 320px; height: 200px;">
+      <img src="https://media.news1.co.il/thumbs/480/NEWSY20dc817dcad8854fe498e8ff43316a3b0c.jpg"
+           alt="כתבה ערוץ 14"
+           style="width: 100%; height: 100%; object-fit: cover;">
+      <div style="
+           position: absolute;
+           bottom: 0;
+           width: 100%;
+           background: rgba(0,0,0,0.5);
+           color: white;
+           padding: 12px;
+           font-size: 1.1rem;
+           text-align: center;
+           box-sizing: border-box;
+      ">
+        כתבה מערוץ 14
+      </div>
+    </div>
+  </a>
+
+</section>
+    <body dir="rtl" style="font-family: Arial; text-align: center; margin-top: 50px;">
+    <a href="https://pointofmemory.com/memorials/2004/" 
+       style="font-size: 32px; text-decoration: none; color: #003cff;">
+       אתר לזכר עילוי נשמת איתי
+    </a>
+</body>
+
+
+<!-- אם תרצה להוסיף גם וידאו – אפשר להוסיף בנפרד -->
+<!-- לדוגמה, מתחת לכתבות: -->
+
+</section>
+
+
+
+
+</body>
+</html>
+
+
+
+    <section id="gallery" class="center">
+        <h2>גלריית תמונות</h2>
+        <div class="static-gallery">
+            <a href="#gallery"><img src="https://a7.org/?file=20250128230919.jpeg" alt="תמונה 1"></a>
+            <a href="#gallery"><img src="https://a7.org/?file=20250128230907.jpeg" alt="תמונה 2"></a>
+            <a href="#gallery"><img src="https://i.postimg.cc/RhV5j0Zm/IMG-20251202-WA0070.jpg" alt="תמונה 9"></a>
+            <a href="#gallery"><img src="https://i.postimg.cc/L6WKb2KZ/IMG-20251202-WA0062.jpg" alt="תמונה 10"></a>
+            <a href="#gallery"><img src="https://i.postimg.cc/qR4937nK/IMG-20251202-WA0066.jpg" alt="תמונה 11"></a>
+            <a href="#gallery"><img src="https://i.postimg.cc/PrP0Z9Lb/IMG-20251202-WA0069.jpg" alt="תמונה 12"></a>
+            <a href="#gallery"><img src="https://i.postimg.cc/NjXVCXkP/IMG-20251202-WA0068.jpg" alt="תמונה 13"></a>
+            <a href="#gallery"><img src="https://i.postimg.cc/nzFPLPb7/IMG-20251202-WA0067.jpg" alt="תמונה 14"></a>
+            <a href="#gallery"><img src="https://a7.org/?file=20250128230929.jpeg" alt="תמונה 3"></a>
+            <a href="#gallery"><img src="https://2.a7.org/files/pictures/781x439/1176917.jpg" alt="תמונה 4"></a>
+
+        </div> 
+        </div>
+    </section>
+
+
+
+    <footer>
+        קפה איתי – עגלת הקפה לזכר סרן איתי מאור ז״ל
+    </footer>
+
+    <a class="whatsapp" href="https://wa.me/972545533305" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
+    </a>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const topNav = document.getElementById('topNav');
+
+        hamburger.addEventListener('click', () => {
+            topNav.classList.toggle('active');
+        });
+    </script>
+    <!-- ... כל התוכן האחר ... -->
+
+
+
+
+</body>
+<script>
+    let slideIndex = 0;
+
+    function showSlides() {
+        const slides = document.getElementsByClassName("slide");
+        const dots = document.getElementsByClassName("dot");
+
+        // מסתירים את כל השקפים
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        // עוברים לשקף הבא בסדר קבוע
+        slideIndex++;
+        if (slideIndex > slides.length) slideIndex = 1;
+
+        // מסמנים את הנקודה הפעילה
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active-dot");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add("active-dot");
+
+        // מחכים 4 שניות ואז עוברים לשקף הבא
+        setTimeout(showSlides, 4000);
+    }
+
+    // מאפשר למשתמש ללחוץ על נקודה ולעבור ישירות לשקף
+    function currentSlide(n) {
+        slideIndex = n - 1; // נתקן את האינדקס
+        showSlides();
+    }
+
+    // מתחילים את הסליידר
+    showSlides();
+</script>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
